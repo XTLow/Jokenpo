@@ -1,0 +1,69 @@
+﻿@using GrupoCard_Jokenpo.Models
+@model List<Player>
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Index";
+}
+
+<div class="index_grid">
+    <div class="index_board">
+        <div class="index_board_text">
+
+        </div>
+        <div class="index_input">
+            <input class="btn btn-dark input_btn" type="button" value="Pedra" onclick="play(0)" />
+            <input class="btn btn-dark input_btn" type="button" value="Papel" onclick="play(1)" />
+            <input class="btn btn-dark input_btn" type="button" value="Tesoura" onclick="play(2)" />
+        </div>        
+        <div>
+            <input type="number" class="counter" style="text-align:center" value="30" disabled/>
+        </div>
+
+        <input style="width:auto; height:40px; margin:10px" class="btn btn-danger btn-lg btn-block" onclick="logOut()" type="button" value="Logout"/>
+    </div>
+    <div class="index_players">
+        <div>
+            <div>
+                <p style="color:white; font-size:24px">Jogadores</p>
+                <hr style="border-top: 3px solid #bbb;" />
+            </div>
+            <div>
+                @if (Model != null)
+                {
+                    @foreach(var player in Model)
+                    {
+                        <p class="player_tag">@player.Name</p>
+                    }   
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/hubs/player.js"></script>
+<script>
+    const logOut = () => {        
+        fetch(window.location.origin + '/Logout', {
+            method:'POST'
+        }).then((resp) => {
+            window.location.reload();
+        });
+    };  
+
+    const play = (num) => {        
+        fetch(window.location.origin + '/Game/Play?' + new URLSearchParams({
+            move: num,
+        }), {
+            method:'POST'            
+        });
+    }; 
+
+    const interval = setInterval(function() {
+        let counter = document.querySelector('.counter');
+        counter.value -= 1;
+    }, 1000);
+</script>
+
+
+
+

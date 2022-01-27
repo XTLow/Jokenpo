@@ -1,0 +1,77 @@
+﻿.index_grid {
+    display: grid;
+    grid-template-columns: auto 180px;
+    padding: 20px;
+    height:90vh;
+}
+
+.index_board {
+    display: grid;
+    height:100%;
+    grid-template-rows: auto 60px 60px;
+}
+
+.index_board_text {
+    border: 2px solid gray;
+    border-radius: 12px;
+    margin-bottom:10px;
+    padding:10px;
+    word-break:break-word;
+    overflow:auto;
+    height:70vh;
+}
+
+.index_input {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 2px solid gray;
+    border-radius: 12px;
+    margin-top:10px;
+}
+
+.index_players {
+    border: 2px solid gray;
+    border-radius: 12px;
+    height: fit-content;
+    padding:10px;
+    margin-left:10px
+}
+
+.player_tag {
+    color: cornflowerblue;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor:pointer;
+}
+
+.input_btn {
+    margin: 5px;
+    border-radius:12px;
+}
+
+.message {
+    margin:1px;
+}
+
+.green_message {
+    color:greenyellow;
+}
+
+.red_message {
+    color: darkred;
+}
+
+.winner_message {
+    color: deepskyblue;
+}
+
+.counter {
+    margin-top:10px;
+    font-size:30px;
+    color:deepskyblue;
+    background:none;
+    border:none;
+    width:100%;
+}

@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Title = "Sign In";
+}
+
+<form onsubmit="signIn()" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); border:solid 2px #808080; border-radius:10px">
+    <div class="cad_container" style="padding:10px; width:500px">
+        <input class="form-control input" style="width:100%; margin-bottom:10px; background-color:#181818; color:white;" class="form-control" type="text" placeholder="Nick name">
+        <input style="width:100%" class="btn btn-primary btn-lg btn-block" type="button" onclick="signIn()" value="Sign In">
+    </div>
+</form>
+
+<script>
+    const signIn = () => {          
+        fetch(window.location.origin +'/SignIn/',{
+            method:'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(document.querySelector('.input').value)
+        }).then((result) => {
+            window.location.href = result.url;
+        });
+    };    
+</script>

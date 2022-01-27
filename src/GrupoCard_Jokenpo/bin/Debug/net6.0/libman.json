@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "@microsoft/signalr@latest",
+      "destination": "wwwroot/js/signalr/",
+      "files": [
+        "dist/browser/signalr.js",
+        "dist/browser/signalr.min.js"
+      ]
+    },
+    {
+      "library": "bootstrap@5.1.3",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "dist/css/bootstrap-grid.css",
+        "dist/css/bootstrap-grid.min.css",
+        "dist/css/bootstrap-grid.rtl.css",
+        "dist/css/bootstrap-grid.rtl.min.css",
+        "dist/css/bootstrap-reboot.css",
+        "dist/css/bootstrap-reboot.min.css",
+        "dist/css/bootstrap-reboot.rtl.css",
+        "dist/css/bootstrap-reboot.rtl.min.css",
+        "dist/css/bootstrap-utilities.css",
+        "dist/css/bootstrap-utilities.min.css",
+        "dist/css/bootstrap-utilities.rtl.css",
+        "dist/js/bootstrap.min.js",
+        "dist/css/bootstrap-utilities.rtl.min.css",
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.esm.min.js",
+        "dist/css/bootstrap.min.css",
+        "dist/js/bootstrap.esm.js",
+        "dist/css/bootstrap.rtl.css",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/css/bootstrap.rtl.min.css",
+        "dist/js/bootstrap.bundle.js"
+      ]
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "dist/jquery.js",
+        "dist/jquery.min.js",
+        "dist/jquery.slim.js",
+        "dist/jquery.slim.min.js"
+      ]
+    }
+  ]
+}

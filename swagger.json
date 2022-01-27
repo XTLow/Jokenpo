@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GrupoCard_Jokenpo",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Game/Play": {
+      "post": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "Make a move",
+        "parameters": [
+          {
+            "name": "move",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/Jokenpo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Game/Undo": {
+      "delete": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "Undo a move",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Index": {
+      "get": {
+        "tags": [
+          "Index"
+        ],
+        "summary": "Index page",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SignIn": {
+      "get": {
+        "tags": [
+          "Index"
+        ],
+        "summary": "Sign In page",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Index"
+        ],
+        "summary": "Sign In",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Logout": {
+      "post": {
+        "tags": [
+          "Index"
+        ],
+        "summary": "Logout from current session",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Jokenpo": {
+        "enum": [
+          "Pedra",
+          "Papel",
+          "Tesoura"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}
